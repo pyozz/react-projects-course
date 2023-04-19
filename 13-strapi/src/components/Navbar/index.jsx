@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import * as S from './style';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { AppContext } from '../../context';
+import { NavLinks } from '..';
 
 function index() {
   const { openSidebar } = useContext(AppContext);
@@ -13,6 +14,8 @@ function index() {
         <S.ToggleSidebarBtn type="button" onClick={openSidebar}>
           <AiOutlineMenu />
         </S.ToggleSidebarBtn>
+
+        <NavLinks />
       </S.NavCenter>
     </S.Nav>
   );

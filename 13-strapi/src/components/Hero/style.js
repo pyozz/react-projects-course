@@ -10,6 +10,10 @@ export const HeroContainer = styled.div`
 export const HeroCenter = styled.div`
   width: 90vw;
   max-width: 1190px;
+
+  @media screen and (min-width: 768px) {
+    text-align: center;
+  }
 `;
 
 export const Title = styled.strong`

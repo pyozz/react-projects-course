@@ -31,4 +31,8 @@ export const ToggleSidebarBtn = styled.button`
   border: none;
   border-radius: 4px;
   outline: none;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `;

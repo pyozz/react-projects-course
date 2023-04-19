@@ -1,11 +1,13 @@
 import React from 'react';
-import Navbar from './components/Navbar';
+import { Hero, Navbar } from './components/index';
+import * as S from './style';
 
 function App() {
   return (
-    <main>
+    <S.Main>
       <Navbar />
-    </main>
+      <Hero />
+    </S.Main>
   );
 }
 

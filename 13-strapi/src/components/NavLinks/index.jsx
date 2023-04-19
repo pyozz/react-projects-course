@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import sublinks from '../../data';
 import * as S from './style';
+import { AppContext } from '../../context';
 
 function index() {
+  const { setPageId } = useContext(AppContext);
+
+  const hideSubmenuHandler = (e) => {
+    if (e.target.nodeName !== 'BUTTON') setPageId(null);
+  };
+
   return (
-    <S.NavLinks>
+    <S.NavLinks onMouseOver={hideSubmenuHandler}>
       {sublinks.map((sublink) => {
-        const { page, links } = sublink;
+        const { pageId, page } = sublink;
 
         return (
-          <S.SubLink key={page} type="button">
+          <S.SubLink
+            key={pageId}
+            type="button"
+            onMouseEnter={() => setPageId(pageId)}
+          >
             {page}
           </S.SubLink>
         );

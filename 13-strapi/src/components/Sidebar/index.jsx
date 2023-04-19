@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import * as S from './style';
 import sublinks from '../../data';
 import { IoClose } from 'react-icons/io5';
+import { AppContext } from '../../context';
 
 function index() {
+  const { isSidebarOpen, closeSidebar } = useContext(AppContext);
+
   return (
-    <S.Sidebar>
+    <S.Sidebar isSidebarOpen={isSidebarOpen}>
       <S.SidebarCenter>
-        <S.closeButton type="button">
+        <S.closeButton type="button" onClick={closeSidebar}>
           <IoClose />
         </S.closeButton>
 

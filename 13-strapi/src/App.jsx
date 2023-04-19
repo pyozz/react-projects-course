@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hero, Navbar } from './components/index';
+import { Hero, Navbar, Sidebar } from './components/index';
 import * as S from './style';
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
     <S.Main>
       <Navbar />
       <Hero />
+      <Sidebar />
     </S.Main>
   );
 }

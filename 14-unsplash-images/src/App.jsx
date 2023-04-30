@@ -1,10 +1,14 @@
+import React from 'react'
+import ToggleTheme from './components/ToggleTheme'
+import AppProvider from './context'
 import GlobalStyle from './styles/globalStlye'
 
 function App() {
   return (
-    <div>
+    <AppProvider>
       <GlobalStyle />
-    </div>
+      <ToggleTheme />
+    </AppProvider>
   )
 }
 

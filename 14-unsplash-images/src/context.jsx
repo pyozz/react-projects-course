@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { createContext, useState } from 'react'
 
 export const AppContext = createContext(null)
 
+const getInitialMode = () => {
+  return window.matchMedia('(prefers-color-scheme:dark)').matches
+}
+
 function AppProvider({ children }) {
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(getInitialMode())
   const [searchValue, setSearchValue] = useState('cat')
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode)
-    document.body.classList.toggle('dark-mode')
   }
+
+  useEffect(() => {
+    document.body.classList.toggle('dark-mode', isDarkMode)
+  }, [isDarkMode])
 
   return (
     <AppContext.Provider

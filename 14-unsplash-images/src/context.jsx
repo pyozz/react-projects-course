@@ -5,6 +5,7 @@ export const AppContext = createContext(null)
 
 function AppProvider({ children }) {
   const [isDarkMode, setIsDarkMode] = useState(false)
+  const [searchValue, setSearchValue] = useState('cat')
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode)
@@ -12,7 +13,9 @@ function AppProvider({ children }) {
   }
 
   return (
-    <AppContext.Provider value={{ isDarkMode, toggleDarkMode }}>
+    <AppContext.Provider
+      value={{ isDarkMode, toggleDarkMode, searchValue, setSearchValue }}
+    >
       {children}
     </AppContext.Provider>
   )

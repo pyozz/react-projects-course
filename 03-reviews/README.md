@@ -1,58 +1,68 @@
-## Steps
+# Reviews
 
-#### Explore Data
+## Points
 
-Navigate to data.js and take a look at the data structure
+- Import reviews
+- Setup state value(index)
+- Render first person
+- Prev and Next button
+- Random button
+- Modulus operator
 
-#### Import Reviews
+<br />
 
-First, import the reviews data into your project. This data should be an array of objects, with each object representing a person's review and containing properties such as name, job, image URL, and text.
+## 사용한 기술
 
-#### Setup State Value (Index)
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
 
-Then, set up a state value that controls which person from the list is displayed.
+<br />
 
-#### React Icons (Optional)
+## 결과물
 
-[Docs](https://react-icons.github.io/react-icons/)
+<p align="center"><img src="https://github.com/pyozz/javascript-projects-course/assets/92071025/9c52e41a-0ea2-4a5c-8838-1eded48a8501" width=450 /></p>
 
-```sh
-npm install react-icons --save
-```
+<br />
+
+## 리팩토링
+
+원래 기존에는 이전, 다음 버튼을 아래와 같이 단순히 이전 값에 +-1을 하고 검증하는 방식이였는데
+
+<br />
 
 App.jsx
 
 ```js
-import { FaBeer } from 'react-icons/fa';
-const App = () => {
-  return;
-  <div>
-    <h2>Reviews Starter</h2>;
-    <FaBeer className='beer' />
-  </div>;
-};
+const checkNumber = (number) => {
+  if (number < 0) return people.length - 1
+  if (number > people.length - 1) return 0
+
+  return number
+}
+
+const prevPerson = () => {
+  setIndex((state) => {
+    return checkNumber(state - 1)
+  })
+}
+
+const nextPerson = () => {
+  setIndex((state) => {
+    return checkNumber(state + 1)
+  })
+}
 ```
 
-#### Render First Person
+<br />
 
-To render the first person in the list, you can access the first item in the reviews array and use its properties to display the person's image (inline styles), name, job, and review text.
+% 연산자를 활용해서 코드를 간결화 하였다.<br />
+next 버튼은 배열 데이터의 길이를 초과해도 잘되지만, prev 버튼에서 0보다 작을 경우 때문에 단순히 -1이 아닌 배열 데이터 길이를 이용한 추가 작업을 해주어야한다.
 
-#### Prev and Next
+```js
+const prevPerson = () => {
+  setIndex((prevIndex) => (prevIndex - 1 + people.length) % people.length)
+}
 
-To allow the user to cycle through the reviews, you can set up buttons to display the next and previous reviews in the list. You can do this by keeping track of the current index in the reviews array, and updating the index when the user clicks the next or previous button. You can then use the updated index to access the corresponding person's review from the reviews array.
-
-#### Random
-
-To allow the user to display a random person's review, you can set up a button with functionality to randomly select an index in the reviews array. You can then use the selected index to display the corresponding person's review.
-
-#### Extra
-
-The modulus operator in JavaScript is represented by the percent sign (%). It returns the remainder of a division operation between two numbers.
-
-Overall, the flow of the application should look something like this:
-
-- Import the reviews data into your project as an array of objects.
-- Set up the reviews data as a state variable using the useState hook.
-- Render the first person's review in the list using their image, name, job, and text properties.
-- Set up buttons to display the next and previous reviews in the list. Keep track of the current index in the reviews array and update it when the user clicks the next or previous button.
-- Set up a button to display a random person's review. This button should select a random index in the reviews array and use it to display the corresponding person's review.
+const nextPerson = () => {
+  setIndex((prevIndex) => (prevIndex + 1) % people.length)
+}
+```

@@ -1,32 +1,27 @@
-## Steps
+# Questions
 
-#### Examine and Import Data
+## Points
 
-Review data.js and import the questions array from data.js into your project. This array should contain objects that represent the questions and their associated data, such as the question text
+- Import data
+- Setup state value
+- Render questions
+- Toggle question
+- Render only the SingleQuestion component
 
-#### Setup State Value
+<br />
 
-Next, set up the questions array as a state variable using the useState hook. This will allow you to modify the data and have those changes automatically reflected in the rendered output.
+## 사용한 기술
 
-#### Render Questions
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
 
-To display the list of questions, you can iterate over the questions array and render a SingleQuestion component for each item in the array. Each SingleQuestion component should display the question text in the header, along with a button to toggle the question text.
+<br />
 
-#### Toggle Question
+## 결과물
 
-In the SingleQuestion component, you can set up the functionality for the toggle button by defining a function that toggles the state of a "showInfo" flag. When the flag is set to true, the answer text will be displayed. When the flag is set to false, only the question text will be displayed.
+<img src="https://github.com/pyozz/react-projects-course/assets/92071025/033e3c3c-e65e-4dc2-9f52-f5a1c351f115" />
 
-#### Extra Challenge
+<br />
 
-To set up the functionality where only one question is displayed at a time, you can modify the state of the questions array to keep track of the currently selected question. You can do this by defining a function that updates the state to reflect the selected question index. Then, you can use the selected question index to render only the SingleQuestion component that corresponds to the currently selected question.
+## 회고
 
-Overall, the flow of the application should look something like this:
-
-- Import the questions array from data.js into your project.
-- Set up the questions array as a state variable using the useState hook.
-- Iterate over the questions array and render a SingleQuestion component for each item in the array.
-- In the SingleQuestion component, display the question text in the header and a button to toggle the question text.
-- Define a function that toggles the state of a "showAnswer" flag, which determines whether the answer text is displayed or not.
-- Modify the state of the questions array to keep track of the currently selected question index.
-- Define a function that updates the state to reflect the selected question index.
-- Use the selected question index to render only the SingleQuestion component that corresponds to the currently selected question.
+사이트의 FAQ 페이지에서 하나의 요소만 펼쳐지는 경우를 많이 봤는데 이 프로젝트를 통해 어떤 식으로 구현되는지에 대한 궁금증이 풀렸다.

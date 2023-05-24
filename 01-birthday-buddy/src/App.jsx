@@ -9,6 +9,10 @@ const App = () => {
     setUsers([])
   }
 
+  const fetchUsersHandler = () => {
+    setUsers(data)
+  }
+
   return (
     <main>
       <section className="container">
@@ -18,10 +22,10 @@ const App = () => {
 
         <button
           className="btn btn-block"
-          onClick={usersClearHandler}
+          onClick={users.length === 0 ? fetchUsersHandler : usersClearHandler}
           type="button"
         >
-          clear all
+          {users.length === 0 ? 'refetch' : 'clear all'}
         </button>
       </section>
     </main>

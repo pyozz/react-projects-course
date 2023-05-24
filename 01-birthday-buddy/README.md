@@ -1,35 +1,41 @@
+# Birthday Buddy
+
 ## Steps
 
-- don't worry about CSS, checkout example image
+- Import data
+- Setup state variable
+- Iterate and Render
+- Clear list
 
-#### Import Data
+<br />
+<br />
 
-In App.jsx, import the data (from data.js) to be rendered as an array of objects. Each object should represent a person and contain properties such as name, age, and image URL.
+## 사용한 기술
 
-#### Setup State Variable
+<br />
 
-Then, set up the data as a state variable using the useState hook. This will allow the data to be modified and have those changes automatically reflected in the rendered output.
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
 
-#### Iterate and Render
+<br />
+<br />
 
-Display the number of items in the list by using the length property of the state variable. This information can be displayed using plain text or added to a message or heading element.
+## 결과물
 
-To render the list of people, iterate over the data array using the map method. For each item in the array, render an image element (hint : use inline styles to make width smaller).Additionally, render the person's name and age as plain text.
+<br />
 
-Create a List component to hold the rendered items. This component can be a simple div element containing the list of Person components.
+<img src="https://github.com/pyozz/react-projects-course/assets/92071025/281317a7-54ad-4692-9c55-46f6f524e02c" />
+전체 데이터를 보여줍니다.
 
-Create a Person component to render the information for each person. This component should receive the person data as props and render the image, name, and age information.
+<br />
 
-#### Clear List
+<img src="https://github.com/pyozz/react-projects-course/assets/92071025/ae681ed8-8027-4eba-a77a-230c4093cd3f" />
+clear 버튼 클릭시 빈 배열 데이터가 설정되어 어떤 데이터도 나오지 않으며 전체 데이터를 렌더링할 수 있는 refetch 버튼이 나타납니다.
 
-In App.jsx, add a button to clear the list, and set up the functionality by defining a function that resets the state variable to an empty array.
+<br />
+<br />
 
-Overall, the flow of the application should look something like this:
+## 회고
 
-- Import the data you want to render in App.jsx.
-- Set up the data as a state variable using useState.
-- Use the map method to iterate over the data array and render a Person component for each person.
-- Each Person component should render an image with a style prop to control the width, the person's name, and the person's age.
-- Create a List component that holds the rendered items.
-- Create a button with functionality to clear the list.
-- Display the number of items in the list using the length property of the state variable. This can be rendered using plain text or added to a message or heading element.
+<br />
+
+과정 중 첫 프로젝트라 그런지 어렵지 않은 수준의 프로젝트였습니다.

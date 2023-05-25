@@ -19,7 +19,7 @@
 
 ## 결과물
 
-<p align="center"><img src="https://github.com/pyozz/javascript-projects-course/assets/92071025/9c52e41a-0ea2-4a5c-8838-1eded48a8501" width=450 /></p>
+<img src="https://github.com/pyozz/javascript-projects-course/assets/92071025/9c52e41a-0ea2-4a5c-8838-1eded48a8501" />
 
 <br />
 

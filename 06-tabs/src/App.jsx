@@ -5,7 +5,7 @@ import JobInfo from './JobInfo'
 const url = 'https://course-api.com/react-tabs-project'
 
 const App = () => {
-  const [jobs, setJobs] = useState([])
+  const [jobs, setJobs] = useState()
   const [currentItem, setCurrentItem] = useState(0)
 
   const fetchJobs = async () => {
@@ -21,6 +21,8 @@ const App = () => {
   useEffect(() => {
     fetchJobs()
   }, [])
+
+  if (!jobs) return null
 
   return (
     <section className="jobs-center">

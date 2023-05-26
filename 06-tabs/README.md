@@ -12,6 +12,8 @@
 ## 사용한 기술
 
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+<img src="https://img.shields.io/badge/react_icons-555555?style=for-the-badge">
+<img src="https://img.shields.io/badge/uuid-555555?style=for-the-badge">
 
 <br />
 

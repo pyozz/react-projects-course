@@ -1,9 +1,9 @@
-import React from 'react'
-import TodoItem from './TodoItem'
+import React from "react";
+import TodoItem from "./TodoItem";
 
 function TodoList({ todos, removeTodo, editTodo }) {
   return (
-    <div className="items">
+    <div className="grocery">
       {todos.map((todo) => (
         <TodoItem
           key={todo.id}
@@ -13,7 +13,7 @@ function TodoList({ todos, removeTodo, editTodo }) {
         />
       ))}
     </div>
-  )
+  );
 }
 
-export default TodoList
+export default TodoList;

@@ -1,15 +1,15 @@
-import React, { useContext, useState } from 'react'
-import { AppContext } from '../../context'
-import * as S from './style'
+import React, { useContext, useState } from "react";
+import { AppContext } from "../../context";
+import * as S from "./style";
 
-function index() {
-  const [input, setInput] = useState('')
-  const { setSearchValue } = useContext(AppContext)
+function SearchForm() {
+  const [input, setInput] = useState("");
+  const { setSearchValue } = useContext(AppContext);
 
   const submitHandler = (e) => {
-    e.preventDefault()
-    setSearchValue(input)
-  }
+    e.preventDefault();
+    setSearchValue(input);
+  };
 
   return (
     <S.FormContainer>
@@ -20,7 +20,7 @@ function index() {
         <button type="submit">검색</button>
       </form>
     </S.FormContainer>
-  )
+  );
 }
 
-export default index
+export default SearchForm;

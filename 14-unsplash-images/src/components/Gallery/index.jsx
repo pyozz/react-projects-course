@@ -1,22 +1,15 @@
 import React, { useContext } from "react";
 import { useQuery } from "react-query";
-import axios from "axios";
+import { getPhotos } from "../../apis/gallery";
 import { AppContext } from "../../context";
 import * as S from "./style";
-
-const url = `https://api.unsplash.com/search/photos?client_id=${
-  import.meta.env.VITE_API_KEY
-}`;
 
 function Gallery() {
   const { searchValue } = useContext(AppContext);
 
-  const getImages = async () => {
-    const response = await axios.get(`${url}&query=${searchValue}`);
-    return response.data;
-  };
-
-  const { data: images } = useQuery(["images", searchValue], getImages);
+  const { data: images } = useQuery(["images", searchValue], () =>
+    getPhotos(searchValue)
+  );
 
   return (
     <S.Gallery>
